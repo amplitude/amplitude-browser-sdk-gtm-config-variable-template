@@ -1,4 +1,4 @@
-___TERMS_OF_SERVICE___
+﻿___TERMS_OF_SERVICE___
 
 By creating or modifying this file you agree to Google Tag Manager's Community
 Template Gallery Developer Terms of Service available at
@@ -48,6 +48,13 @@ ___TEMPLATE_PARAMETERS___
         "value": "both"
       }
     ]
+  },
+  {
+    "type": "CHECKBOX",
+    "name": "fallbackAttributionEvent",
+    "checkboxText": "fallbackAttributionEvent",
+    "simpleValueType": true,
+    "help": "https://amplitude.com/docs/sdks/analytics/browser/browser-sdk-2#fallback-attribution-event"
   }
 ]
 
@@ -60,6 +67,7 @@ if (data.trackingMethod) {
   config.autocapture = {
     attribution: {
       trackingMethod: data.trackingMethod === 'both' ? ['userProperty', 'eventProperty'] : data.trackingMethod,
+      fallbackAttributionEvent: data.fallbackAttributionEvent,
     },
   };
 }

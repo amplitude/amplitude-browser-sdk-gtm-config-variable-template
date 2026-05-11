@@ -25,7 +25,7 @@ ___TEMPLATE_PARAMETERS___
     "name": "trackingMethod",
     "displayName": "Tracking method",
     "simpleValueType": true,
-    "help": "TODO: add dev doc link",
+    "help": "https://amplitude.com/docs/sdks/analytics/browser/browser-sdk-2#event-property-tracking",
     "selectItems": [
       {
         "displayValue": "User property",

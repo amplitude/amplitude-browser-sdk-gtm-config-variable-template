@@ -63,12 +63,19 @@ ___SANDBOXED_JS_FOR_WEB_TEMPLATE___
 
 const config = {};
 
+const attribution = {};
+
 if (data.trackingMethod) {
+  attribution.trackingMethod = data.trackingMethod === 'both' ? ['userProperty', 'eventProperty'] : data.trackingMethod;
+}
+
+if (data.fallbackAttributionEvent) {
+  attribution.fallbackAttributionEvent = data.fallbackAttributionEvent;
+}
+
+if (data.trackingMethod || data.fallbackAttributionEvent) {
   config.autocapture = {
-    attribution: {
-      trackingMethod: data.trackingMethod === 'both' ? ['userProperty', 'eventProperty'] : data.trackingMethod,
-      fallbackAttributionEvent: data.fallbackAttributionEvent,
-    },
+    attribution: attribution,
   };
 }
 
@@ -108,11 +115,38 @@ scenarios:
         }
       }
     });
+- name: Returns fallbackAttributionEvent when tracking method is unset
+  code: |-
+    const variableResult = runCode({
+      fallbackAttributionEvent: true
+    });
+
+    assertThat(variableResult).isEqualTo({
+      autocapture: {
+        attribution: {
+          fallbackAttributionEvent: true
+        }
+      }
+    });
+- name: Returns attribution trackingMethod and fallbackAttributionEvent
+  code: |-
+    const variableResult = runCode({
+      trackingMethod: 'eventProperty',
+      fallbackAttributionEvent: true
+    });
+
+    assertThat(variableResult).isEqualTo({
+      autocapture: {
+        attribution: {
+          trackingMethod: 'eventProperty',
+          fallbackAttributionEvent: true
+        }
+      }
+    });
 setup: ''
 
 
 ___NOTES___
 
 Created on 22/04/2026, 00:00:00
-
 

@@ -1,0 +1,5 @@
+homepage: "https://www.amplitude.com/"
+documentation: "https://www.docs.developers.amplitude.com/data/sources/google-tag-manager-client/"
+versions:
+  - sha: "REPLACE_WITH_PUBLISH_COMMIT_SHA"
+    changeNotes: Initial release.

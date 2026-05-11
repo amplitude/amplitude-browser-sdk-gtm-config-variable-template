@@ -1,5 +1,5 @@
 homepage: "https://www.amplitude.com/"
 documentation: "https://www.docs.developers.amplitude.com/data/sources/google-tag-manager-client/"
 versions:
-  - sha: "REPLACE_WITH_PUBLISH_COMMIT_SHA"
-    changeNotes: Initial release.
+  - sha: 5f27845bc504c4500411c7a2ebbe66a1885bfad0
+    changeNotes: add auto capture attribution tracking method for event property-based attribution

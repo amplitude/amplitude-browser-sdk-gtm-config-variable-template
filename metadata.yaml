@@ -1,5 +1,7 @@
 homepage: "https://www.amplitude.com/"
 documentation: "https://www.docs.developers.amplitude.com/data/sources/google-tag-manager-client/"
 versions:
+  - sha: dd75111ce82d2be99f6fff05b7973ea28195242c
+    changeNotes: add auto capture fallback attribution event option
   - sha: c47e5b52eb7eee13093fad28801e6d1c13660698
     changeNotes: add auto capture attribution tracking method for event property-based attribution
